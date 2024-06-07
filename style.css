@@ -1,0 +1,377 @@
+/*----------------
+     VARIABLES
+-----------------*/
+:root {
+  /* THEME 1*/
+  /* bg */
+  --clr-1-very-dark-desaturated-blue-main-bg: hsl(222, 26%, 31%);
+  --clr-1-very-dark-desaturated-blue-toggle-bg-keypad-bg: hsl(223, 31%, 20%);
+  --clr-1-very-dark-desaturated-blue-screen-bg: hsl(224, 36%, 15%);
+
+  /* Keys  */
+  --clr-1-desaturated-dark-blue-key-bg: hsl(225, 21%, 49%);
+  --clr-1-desaturated-dark-blue-key-shadow: hsl(224, 28%, 35%);
+
+  --clr-1-red-key-bg-toggle: hsl(6, 63%, 50%);
+  --clr-1-dark-red-key-shadow: hsl(6, 70%, 34%);
+
+  --clr-1-light-grayish-orange-key-bg: hsl(30, 25%, 89%);
+  --clr-1-grayish-orange-key-shadow: hsl(28, 16%, 65%);
+
+  /*  Text  */
+  --clr-1-very-dark-grayish-blue: hsl(221, 14%, 31%);
+  --clr-1-white: hsl(0, 0%, 100%);
+
+  /* THEME 2  */
+  /*  bg  */
+  --clr-2-light-gray-main-bg: hsl(0, 0%, 90%);
+  --clr-2-grayish-red-toggle-bg-keypad-bg: hsl(0, 5%, 81%);
+  --clr-2-very-light-gray-screen-bg: hsl(0, 0%, 93%);
+
+  /*  Keys  */
+  --clr-2-dark-moderate-cyan-key-bg: hsl(185, 42%, 37%);
+  --clr-2-very-dark-cyan-key-shadow: hsl(185, 58%, 25%);
+
+  --clr-2-orange-key-bg-toggle: hsl(25, 98%, 40%);
+  --clr-2-dark-orange-key-shadow: hsl(25, 99%, 27%);
+
+  --clr-2-light-grayish-yellow-key-bg: hsl(45, 7%, 89%);
+  --clr-2-dark-grayish-orange-key-shadow: hsl(35, 11%, 61%);
+
+  /*   Text   */
+  --clr-2-very-dark-grayish-yellow: hsl(60, 10%, 19%);
+  --clr-2-white-text: hsl(0, 0%, 100%);
+
+  /*   THEME 3  */
+  /*  bg  */
+  --clr-3-very-dark-violet-main-bg: hsl(268, 75%, 9%);
+  --clr-3-very-dark-violet-toggle-bg-keypad-bg-screen-bg: hsl(268, 71%, 12%);
+
+  /*  Keys   */
+  --clr-3-dark-violet-key-bg: hsl(281, 89%, 26%);
+  --clr-3-vivid-magenta-key-shadow: hsl(285, 91%, 52%);
+
+  --clr-3-pure-cyan-key-bg-toggle: hsl(176, 100%, 44%);
+  --clr-3-soft-cyan-key-shadow: hsl(177, 92%, 70%);
+
+  --clr-3-very-dark-violet-key-bg: hsl(268, 47%, 21%);
+  --clr-3-dark-magenta-key-shadow: hsl(290, 70%, 36%);
+
+  /* Text  */
+  --clr-3-light-yellow: hsl(52, 100%, 62%);
+  --clr-3-very-dark-blue: hsl(198, 20%, 13%);
+  --clr-3-white-text: hsl(0, 0%, 100%);
+
+  --br-btns: 0.6rem;
+  --br-toggle-bg: 100px;
+  --br-circle: 50%;
+}
+
+/*------------------
+     RESET
+-------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/*------------------
+     GLOBAL STYLES
+-------------------*/
+body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  font-size: 2rem;
+}
+.clr-theme-container {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+.theme-line {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.toggle-bg-container {
+  width: 4.5rem;
+  height: 1.5rem;
+  border-radius: var(--br-toggle-bg);
+  position: relative;
+}
+.toggle-numbers {
+  display: flex;
+  gap: 1rem;
+  margin: 0 0.5rem 0.3rem 0;
+  justify-content: end;
+  font-size: 0.8rem;
+}
+.toggle-circle {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 0.25rem;
+  left: 0.5rem;
+  border-radius: var(--br-circle);
+  cursor: pointer;
+}
+.circle-2 {
+  display: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.circle-3 {
+  left: 3.2rem;
+  display: none;
+}
+.result-container {
+  padding: 1.5rem;
+  margin-block: 2rem 1.5rem;
+  text-align: right;
+  border-radius: var(--br-btns);
+}
+button {
+  border-radius: var(--br-btns);
+  font-family: inherit !important; /*Why must I do this?*/
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.main-calculator-container {
+  border-radius: var(--br-btns);
+  padding: 1.5rem;
+}
+.first-row,
+.second-row,
+.third-row,
+.forth-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /*or we could do auto instead of 1fr*/
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.fifth-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+.key-del,
+.reset-btn,
+.equal-btn {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.key-del {
+  padding-inline: 0;
+}
+
+.reset-btn,
+.equal-btn {
+  padding: 1.5rem;
+}
+
+.key-del:active,
+.key-del:focus,
+.reset-btn:active,
+.reset-btn:focus,
+.equal-btn:active,
+.equal-btn:focus {
+  filter: brightness(180%); /*I like this better than opacity*/
+}
+
+[data-type="number"]:hover {
+  background-color: var(--clr-1-white);
+}
+.active {
+  display: block;
+}
+
+/*----------------
+     THEME 1
+-------------------*/
+.theme-1 {
+  background-color: var(--clr-1-very-dark-desaturated-blue-main-bg);
+  color: var(--clr-1-white);
+  padding: 1.5rem;
+  display: none;
+}
+.theme-1 .toggle-bg-container {
+  background-color: var(--clr-1-very-dark-desaturated-blue-toggle-bg-keypad-bg);
+}
+.theme-1 .toggle-circle {
+  background-color: var(--clr-1-red-key-bg-toggle);
+}
+.theme-1 .result-container {
+  background-color: var(--clr-1-very-dark-desaturated-blue-screen-bg);
+  color: var(--clr-1-white);
+}
+
+.theme-1 .main-calculator-container {
+  background-color: var(--clr-1-very-dark-desaturated-blue-toggle-bg-keypad-bg);
+}
+
+.theme-1 .keys {
+  color: var(--clr-1-very-dark-grayish-blue);
+  border-bottom: 6px solid var(--clr-1-grayish-orange-key-shadow);
+}
+.theme-1 .key-del,
+.theme-1 .reset-btn {
+  background-color: var(--clr-1-desaturated-dark-blue-key-bg);
+  border-bottom: 6px solid var(--clr-1-desaturated-dark-blue-key-shadow);
+  color: var(--clr-1-white);
+}
+.theme-1 .equal-btn {
+  background-color: var(--clr-1-red-key-bg-toggle);
+  border-bottom: 6px solid var(--clr-1-dark-red-key-shadow);
+  color: var(--clr-1-white);
+}
+
+/*------------------
+     THEME 2
+-------------------*/
+.theme-2 {
+  background-color: var(--clr-2-light-gray-main-bg);
+  color: var(--clr-2-very-dark-grayish-yellow);
+  padding: 1.5rem;
+}
+.theme-2 .toggle-bg-container {
+  background-color: var(--clr-2-grayish-red-toggle-bg-keypad-bg);
+}
+
+.theme-2 .toggle-circle {
+  background-color: var(--clr-2-orange-key-bg-toggle);
+}
+.theme-2 .circle-1 {
+  display: none;
+}
+.theme-2 .circle-2 {
+  display: block;
+}
+
+.theme-2 .result-container {
+  background-color: var(--clr-2-white-text);
+}
+.theme-2 .main-calculator-container {
+  background-color: var(--clr-2-very-light-gray-screen-bg);
+}
+
+.theme-2 .keys {
+  color: var(--clr-1-very-dark-grayish-blue);
+  border-bottom: 6px solid var(--clr-2-dark-grayish-orange-key-shadow);
+}
+.theme-2 .key-del,
+.theme-2 .reset-btn {
+  background-color: var(--clr-2-dark-moderate-cyan-key-bg);
+  border-bottom: 6px solid var(--clr-2-very-dark-cyan-key-shadow);
+  color: var(--clr-1-white);
+}
+.theme-2 .equal-btn {
+  background-color: var(--clr-2-orange-key-bg-toggle);
+  border-bottom: 6px solid var(--clr-2-dark-orange-key-shadow);
+  color: var(--clr-1-white);
+}
+
+/*------------------
+     THEME 3
+-------------------*/
+.theme-3 {
+  background-color: var(--clr-3-very-dark-violet-main-bg);
+  color: var(--clr-3-light-yellow);
+  padding: 1.5rem;
+}
+.theme-3 .toggle-bg-container {
+  background-color: var(--clr-3-very-dark-violet-toggle-bg-keypad-bg-screen-bg);
+}
+
+.theme-3 .toggle-circle {
+  background-color: var(--clr-3-pure-cyan-key-bg-toggle);
+}
+.theme-3 .circle-1 {
+  display: none;
+}
+.theme-3 .circle-2 {
+  display: none;
+}
+.theme-3 .circle-3 {
+  display: block;
+}
+.theme-3 .result-container {
+  background-color: var(--clr-3-very-dark-violet-toggle-bg-keypad-bg-screen-bg);
+  color: var(--clr-3-light-yellow);
+}
+.theme-3 .main-calculator-container {
+  background-color: var(--clr-3-very-dark-violet-toggle-bg-keypad-bg-screen-bg);
+}
+
+.theme-3 .keys {
+  background-color: var(--clr-3-very-dark-violet-key-bg);
+  color: var(--clr-3-light-yellow);
+  border-bottom: 6px solid var(--clr-3-dark-magenta-key-shadow);
+}
+.theme-3 .key-del,
+.theme-3 .reset-btn {
+  background-color: var(--clr-3-dark-violet-key-bg);
+  border-bottom: 6px solid var(--clr-3-vivid-magenta-key-shadow);
+  color: var(--clr-1-white);
+}
+.theme-3 .equal-btn {
+  background-color: var(--clr-3-pure-cyan-key-bg-toggle);
+  border-bottom: 6px solid var(---clr-3-soft-cyan-key-shadow); /*these look the same oclor to me ???*/
+  color: var(--clr-3-very-dark-blue);
+}
+
+/*!------------------------
+/*!     MEDIA QUERIES      
+/*!----------------------- */
+@media (min-width: 376px) {
+  body {
+    max-width: 568px;
+  }
+  .calc > * {
+    border-radius: var(--br-btns);
+  }
+  button {
+    padding: 0.8rem 2rem;
+  }
+  .first-row,
+  .second-row,
+  .third-row,
+  .forth-row {
+    gap: 1.3rem;
+    margin-bottom: 1.3rem;
+  }
+  .fifth-row {
+    gap: 1.3rem;
+  }
+
+  .reset-btn,
+  .equal-btn {
+    padding: 1.2rem 2rem;
+  }
+
+  .theme-1 .keys,
+  .theme-2 .keys,
+  .theme-3 .keys,
+  .theme-1 .key-del,
+  .theme-1 .reset-btn .theme-2 .key-del,
+  .theme-2 .reset-btn .theme-3 .key-del,
+  .theme-3 .reset-btn {
+    border-bottom-width: 4px;
+  }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <main class="calculator theme-1">
+      <div class="calc">
+        <div>
+          <div class="title-bar">
+            <h1 class="title">calc</h1>
+            <div class="clr-theme-container">
+              <div class="toggle-numbers">
+                <div class="toggle-1 tog-numbers">1</div>
+                <div class="toggle-2 tog-numbers">2</div>
+                <div class="toggle-3 tog-numbers">3</div>
+              </div>
+              <div class="theme-line">
+                <h2>Theme</h2>
+                <div class="toggle-bg-container">
+                  <div class="toggle-circle circle-1"></div>
+                  <div class="toggle-circle circle-2"></div>
+                  <div class="toggle-circle circle-3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="result-container">0</section>
+          <section class="main-calculator-container">
+            <div class="first-row">
+              <button class="keys key-7" data-type="number">7</button>
+              <button class="keys key-8" data-type="number">8</button>
+              <button class="keys key-9" data-type="number">9</button>
+              <button class="keys key-del" data-type="delete">Del</button>
+            </div>
+            <div class="second-row">
+              <button class="keys key-4" data-type="number">4</button>
+              <button class="keys key-5" data-type="number">5</button>
+              <button class="keys key-6" data-type="number">6</button>
+              <button
+                class="keys key-plus"
+                data-type="operator"
+                data-key="plus"
+              >
+                +
+              </button>
+            </div>
+            <div class="third-row">
+              <button class="keys key-1" data-type="number">1</button>
+              <button class="keys key-2" data-type="number">2</button>
+              <button class="keys key-3" data-type="number">3</button>
+              <button
+                class="keys key-minus"
+                data-type="operator"
+                data-key="minus"
+              >
+                -
+              </button>
+            </div>
+            <div class="forth-row">
+              <button class="keys key-decimal" data-type="number">.</button>
+              <button class="keys key-0" data-type="number">0</button>
+              <button
+                class="keys key-divide"
+                data-type="operator"
+                data-key="divide"
+              >
+                /
+              </button>
+              <button
+                class="keys key-multiply"
+                data-type="operator"
+                data-key="multiply"
+              >
+                x
+              </button>
+            </div>
+            <div class="fifth-row">
+              <button class="keys reset-btn" data-type="reset">reset</button>
+              <button class="keys equal-btn" data-type="equal">=</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="app.js"></script>
+</html>
